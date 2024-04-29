@@ -2,10 +2,7 @@ package com.example.ussd.web;
 
 import com.example.ussd.domain.ussdObj;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ussdController {
@@ -19,7 +16,7 @@ public class ussdController {
     }
 
 
-
+    @CrossOrigin
     @PostMapping("/ussd")
     public String ussdRes(@RequestBody ussdObj ussd){
 
@@ -35,6 +32,10 @@ public class ussdController {
 
         if (inputInt == 3){
             return "Option 3!";
+        }
+
+        if (inputInt == 4){
+            return "Option 4!";
         }
 
 //        if(ussd.getText().isEmpty()|| ussd.getText()==""){

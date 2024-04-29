@@ -7,13 +7,18 @@ public class ussdObj {
     private long phoneNumber;
     private String text;
 
-    private ussdObj(long id, long nCode, long sCode,long number, String txt){
+    public ussdObj() {
+
+    }
+    private ussdObj(long id, long nCode, long sCode, long number, String text){
         this.sessionID =id;
         this.networkCode = nCode;
         this.serviceCode = sCode;
         this.phoneNumber = number;
-        this.text = txt;
+        this.text = text;
     }
+
+
 
     public String getText() {
         return text;
@@ -21,5 +26,37 @@ public class ussdObj {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public long getSessionID() {
+        return sessionID;
+    }
+
+    protected void setSessionID(long sessionID) {
+        this.sessionID = sessionID;
+    }
+
+    public long getNetworkCode() {
+        return networkCode;
+    }
+
+    protected void setNetworkCode(long networkCode) {
+        this.networkCode = networkCode;
+    }
+
+    public long getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(long serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+
+    public long getPhoneNumber(){
+        return this.phoneNumber;
+    }
+
+    protected void setPhoneNumber(long phoneNumber){
+        this.phoneNumber = phoneNumber;
     }
 }
